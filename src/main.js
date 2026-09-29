@@ -1,26 +1,28 @@
-// src/main.js — monta a estrutura compartilhada e inicia os módulos.
-import "@styles/style.css"
-import { initNotifications } from "@/app/notifications.js"
-import { initMenu } from "@core/menu/menu.js"
-import { initTheme } from "@core/theme/theme.ui.js"
-import { Layout } from "@layout/index.js"
-import { initRouter } from "@core/router.js"
+// src/main.js — ponto de entrada da aplicação.
+// Este arquivo monta o layout e inicializa os módulos principais.
+import "@styles/style.css" // Carrega os estilos globais.
+import { initNotifications } from "@/app/notifications.js" // Liga os avisos de storage.
+import { initMenu } from "@core/menu/menu.js" // Liga o menu responsivo.
+import { initTheme } from "@core/theme/theme.ui.js" // Liga a troca de tema.
+import { Layout } from "@layout/index.js" // Gera cabeçalho, área principal e rodapé.
+import { initRouter } from "@core/router.js" // Liga a navegação entre rotas.
 
-const app = document.querySelector("#app")
+const app = document.querySelector("#app") // Encontra o elemento raiz do index.html.
 
 if (!app) {
-  throw new Error('Elemento raiz "#app" não encontrado.')
+  throw new Error('Elemento raiz "#app" não encontrado.') // Interrompe se a raiz faltar.
 }
 
+// Monta o layout uma vez; o roteador troca só o conteúdo de #page-outlet.
 app.innerHTML = Layout({
   children: '<div id="page-outlet"></div>',
 })
 
-// A marcação já existe, então menu e tema encontram seus elementos.
+// Inicializamos os módulos depois da montagem para que encontrem seus elementos.
 initNotifications()
 initMenu()
 initTheme()
 initRouter()
 
-// Ferramenta de teste manual: só entra no bundle em desenvolvimento.
+// Importa a ferramenta de demonstração somente durante o desenvolvimento local.
 if (import.meta.env.DEV) import("@/dev/storage-demo.js")

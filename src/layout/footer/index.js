@@ -1,8 +1,9 @@
 // src/layout/footer/index.js
-import "./footer.css"
+import "./footer.css" // Carrega somente o estilo do rodapé.
 
+// Gera o rodapé e atualiza o ano automaticamente.
 export function Footer() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear() // Evita deixar o ano fixo no código.
 
   return `
     <footer class="site-footer">

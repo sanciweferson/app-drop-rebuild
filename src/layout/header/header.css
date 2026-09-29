@@ -24,10 +24,6 @@
   backdrop-filter: blur(14px);
 }
 
-.site-header [hidden] {
-  display: none !important;
-}
-
 .site-header__inner {
   position: relative;
   display: flex;

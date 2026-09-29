@@ -1,6 +1,7 @@
 // src/pages/not-found/index.js
-import "../home/pages.css"
+import "../home/pages.css" // Usa os estilos compartilhados de botões e tipografia.
 
+// Página exibida para qualquer endereço sem rota correspondente.
 export function NotFoundPage() {
   return `
     <section class="not-found" aria-labelledby="not-found-title">
