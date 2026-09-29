@@ -4,6 +4,7 @@ import { initNotifications } from "@/app/notifications.js"
 import { initMenu } from "@core/menu/menu.js"
 import { initTheme } from "@core/theme/theme.ui.js"
 import { Layout } from "@layout/index.js"
+import { initRouter } from "@core/router.js"
 
 const app = document.querySelector("#app")
 
@@ -19,6 +20,7 @@ app.innerHTML = Layout({
 initNotifications()
 initMenu()
 initTheme()
+initRouter()
 
 // Ferramenta de teste manual: só entra no bundle em desenvolvimento.
 if (import.meta.env.DEV) import("@/dev/storage-demo.js")

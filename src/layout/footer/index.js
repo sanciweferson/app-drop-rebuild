@@ -8,7 +8,7 @@ export function Footer() {
     <footer class="site-footer">
       <div class="site-footer__inner">
         <p>© ${year} App Drop</p>
-        <a href="#inicio">Voltar ao início ↑</a>
+        <a href="/#inicio" data-link>Voltar ao início ↑</a>
       </div>
     </footer>
   `

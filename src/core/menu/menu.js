@@ -23,22 +23,18 @@ export function initMenu() {
   openIcon.innerHTML = icons.menuOpen
   closeIcon.innerHTML = icons.menuClose
 
-  // A mensagem de erro muda conforme o estado que estamos tentando salvar.
-  const saveState = () =>
+  let isOpen = mobileQuery.matches && getItem(MENU_STORAGE_KEY, {
+    errorMessage: MESSAGES.menu.loadError,
+  }) === true
+
+  function saveState() {
     setItem(MENU_STORAGE_KEY, isOpen, {
       errorMessage: isOpen
         ? MESSAGES.menu.saveOpenError
         : MESSAGES.menu.saveCloseError,
     })
+  }
 
-  // Restaura o estado salvo só no mobile; no desktop os links já aparecem.
-  const saved = getItem(MENU_STORAGE_KEY, {
-    errorMessage: MESSAGES.menu.loadError,
-  })
-  let isOpen = mobileQuery.matches && saved === true
-  if (!mobileQuery.matches && saved === true) saveState() // corrige "aberto" antigo
-
-  // Fonte única de atualização da tela: muda o estado, chama render().
   function render() {
     const isMobile = mobileQuery.matches
     button.hidden = !isMobile
@@ -55,7 +51,16 @@ export function initMenu() {
     saveState()
   })
 
-  // Ao cruzar o breakpoint, volta para fechado.
+  // Fecha o menu depois da escolha de uma rota no mobile.
+  nav.addEventListener("click", (event) => {
+    if (!mobileQuery.matches || !(event.target instanceof Element)) return
+    if (!event.target.closest("a[data-link]")) return
+
+    isOpen = false
+    render()
+    saveState()
+  })
+
   mobileQuery.addEventListener("change", () => {
     isOpen = false
     render()

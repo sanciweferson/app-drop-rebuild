@@ -5,8 +5,9 @@ import "./header.css"
 
 function renderNavItem(item) {
   const isRoute = item.href === "/" || item.href === "/details"
-  const href = item.href
-  const routeAttribute = isRoute ? ' data-link' : ""
+  const isSectionLink = item.href.startsWith("#")
+  const href = isSectionLink ? `/${item.href}` : item.href
+  const routeAttribute = isRoute || isSectionLink ? ' data-link' : ""
 
   return `
     <a class="site-nav__link site-nav__link--${item.id}" href="${href}"${routeAttribute}>
