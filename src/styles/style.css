@@ -1,0 +1,45 @@
+/* src/styles/style.css — @import vem sempre primeiro. */
+@import "tokens.css";
+@import "reset.css";
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+/* Um único :focus-visible (antes havia dois, em arquivos diferentes). */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--color-on-primary);
+  background-color: var(--color-accent);
+}
+
+#menuToggle,
+#themeToggle {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+#menuToggle:hover,
+#themeToggle:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+#navigationMenu:not([hidden]) {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+#navigationMenu a {
+  color: var(--color-text);
+}

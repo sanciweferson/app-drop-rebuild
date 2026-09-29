@@ -1,0 +1,53 @@
+/* src/styles/tokens.css — igual ao seu original, só reorganizado. */
+:root {
+  color-scheme: light;
+  --container-md: 768px;
+
+  --color-background: oklch(0.978 0.007 88);
+  --color-surface: oklch(0.995 0.004 85);
+  --color-surface-secondary: oklch(0.92 0.012 88);
+
+  --color-text: oklch(0.135 0.003 88);
+  --color-text-muted: oklch(0.5 0.01 88);
+  --color-border: oklch(0.875 0.014 88);
+
+  --color-primary: oklch(0.58 0.13 34);
+  --color-primary-hover: oklch(0.5 0.13 34);
+  --color-on-primary: oklch(0.135 0.003 88);
+
+  --color-accent: oklch(0.78 0.11 70);
+
+  --color-error-text: oklch(0.42 0.17 25);
+  --color-error-background: oklch(0.95 0.025 25);
+  --color-error-border: oklch(0.8 0.1 25);
+
+  --color-success-text: oklch(0.4 0.12 150);
+  --color-success-background: oklch(0.95 0.025 150);
+  --color-success-border: oklch(0.8 0.08 150);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: oklch(0.135 0.003 88);
+  --color-surface: oklch(0.172 0.006 88);
+  --color-surface-secondary: oklch(0.215 0.008 88);
+
+  --color-text: oklch(0.978 0.007 88);
+  --color-text-muted: oklch(0.72 0.01 88);
+  --color-border: oklch(0.3 0.01 88);
+
+  --color-primary: oklch(0.73 0.14 34);
+  --color-primary-hover: oklch(0.8 0.12 34);
+  --color-on-primary: oklch(0.135 0.003 88);
+
+  --color-accent: oklch(0.82 0.085 70);
+
+  --color-error-text: oklch(0.86 0.08 25);
+  --color-error-background: oklch(0.25 0.04 25);
+  --color-error-border: oklch(0.48 0.12 25);
+
+  --color-success-text: oklch(0.84 0.09 150);
+  --color-success-background: oklch(0.23 0.035 150);
+  --color-success-border: oklch(0.45 0.09 150);
+}

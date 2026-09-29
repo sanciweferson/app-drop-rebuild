@@ -1,0 +1,31 @@
+/* src/styles/reset.css — só normaliza o navegador. Sem cores: quem decide
+   cores é o tokens.css. (Removi o body aquamarine que sobrescrevia o tema.) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}

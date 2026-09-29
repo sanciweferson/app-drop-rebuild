@@ -1,0 +1,27 @@
+/* src/components/banner/banner.css — estilos ficam junto do componente. */
+.banner {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  left: 12px;
+  z-index: 1000;
+  max-width: 480px;
+  margin-inline: auto;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+  font-size: 0.95rem;
+}
+
+.banner--error {
+  color: var(--color-error-text);
+  background-color: var(--color-error-background);
+  border-color: var(--color-error-border);
+}
+
+.banner--success {
+  color: var(--color-success-text);
+  background-color: var(--color-success-background);
+  border-color: var(--color-success-border);
+}
