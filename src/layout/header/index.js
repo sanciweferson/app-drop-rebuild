@@ -23,8 +23,8 @@ export function Header() {
 
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="site-header__brand" href="/" data-link aria-label="App Drop — início">
-          <img src="/assets/images/logo.svg" alt="App Drop" width="148" height="40">
+        <a class="site-header__brand" href="/" data-link aria-label="Leno App — início">
+          <img src="/assets/images/logo.svg" alt="Leno App" width="148" height="40">
         </a>
 
         <div class="site-header__actions">
