@@ -1,17 +1,21 @@
-// src/main.js — ponto de entrada. Só monta a página e liga os módulos.
+// src/main.js — monta a estrutura compartilhada e inicia os módulos.
 import "@styles/style.css"
 import { initNotifications } from "@/app/notifications.js"
 import { initMenu } from "@core/menu/menu.js"
 import { initTheme } from "@core/theme/theme.ui.js"
+import { Layout } from "@layout/index.js"
 
-document.querySelector("#app").innerHTML = /* html */ `
+const app = document.querySelector("#app")
 
-`
+if (!app) {
+  throw new Error('Elemento raiz "#app" não encontrado.')
+}
 
-// ORDEM IMPORTA:
-// 1) ouvintes de notificação ANTES de qualquer uso do storage,
-//    senão um erro na inicialização não gera banner;
-// 2) o HTML já existe acima, então menu e tema encontram seus elementos.
+app.innerHTML = Layout({
+  children: '<div id="page-outlet"></div>',
+})
+
+// A marcação já existe, então menu e tema encontram seus elementos.
 initNotifications()
 initMenu()
 initTheme()

@@ -1,5 +1,5 @@
 
-// src/components/data/data.js
+ // src/components/data/data.js
 
 export const menuItems = [
   {
@@ -30,6 +30,6 @@ export const menuItems = [
   {
     id: "contato",
     href: "#contato",
-    label: "Contatto",
+    label: "Contato",
   },
 ]
